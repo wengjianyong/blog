@@ -160,6 +160,7 @@ return [
         //Model-Repository
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
