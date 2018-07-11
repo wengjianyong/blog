@@ -1,10 +1,10 @@
-{{-- NavBar --}}
+
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">后台</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{ route('backend.home') }}"><i class="material-icons">home</i></a></li>
+                <li><a href="<?php echo e(route('backend.home')); ?>"><i class="material-icons">home</i></a></li>
                 <li><a href="#!"><i class="material-icons">notifications</i></a></li>
             </ul>
 
@@ -17,10 +17,11 @@
 
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+        <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+            <?php echo e(config('app.name', 'Laravel')); ?>
+
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -33,32 +34,33 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
-                @guest
+                <?php if(auth()->guard()->guest()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
                     </li>
-                @else
+                <?php else: ?>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}<span class="caret"></span>
+                            <?php echo e(Auth::user()->name); ?><span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                <?php echo e(__('Logout')); ?>
+
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
+                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                <?php echo csrf_field(); ?>
                             </form>
                         </div>
                     </li>
-                @endguest
+                <?php endif; ?>
             </ul>
         </div>
     </div>

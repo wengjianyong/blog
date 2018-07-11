@@ -13,7 +13,7 @@ class CreateSettingTable extends Migration
      */
     public function up()
     {
-        Schema::create('setting', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('key')->default('')->comment('键名');
             $table->string('value')->default('')->comment('键值');
@@ -21,7 +21,7 @@ class CreateSettingTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE `setting` comment'系统参数设置表'"); // 表注释
+        DB::statement("ALTER TABLE `settings` comment'系统参数设置表'"); // 表注释
     }
 
     /**

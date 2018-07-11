@@ -22,14 +22,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         {{-- Header --}}
         <header>
             @include('backend.partials.navbar')
-
-            @include('backend.partials.sidenav')
+            @include('backend.partials.menu')
         </header>
 
         <main class="py-4">
