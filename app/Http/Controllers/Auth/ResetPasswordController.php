@@ -40,7 +40,7 @@ class ResetPasswordController extends Controller
     }
 
     /**
-     * 覆盖ResetsPasswords traits里的resetPassword方法,改为用sha1(salt + password)的加密方式
+     * 覆盖ResetsPasswords traits里的resetPassword方法,改为用hash(salt + password)的加密方式
      * Reset the given user's password.
      *
      * @param  \Illuminate\Contracts\Auth\CanResetPassword  $user
