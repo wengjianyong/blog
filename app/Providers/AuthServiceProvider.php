@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        \Auth::provider('admin-eloquent', function ($app, $config) {
+            return New \App\Foundation\Auth\AdminEloquentUserProvider($app['hash'], $config['model']);
+        });
     }
 }

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','image', 'password',
+        'name','mobile', 'email','salt','image', 'password',
     ];
 
     /**
@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * 覆盖Laravel中默认的getAuthPassword方法, 返回用户的password和salt字段
+     * @return type
+     */
+    public function getAuthPassword()
+    {
+        return ['password' => $this->attributes['password'], 'salt' => $this->attributes['salt']];
+    }
 }
