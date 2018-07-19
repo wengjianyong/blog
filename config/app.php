@@ -168,6 +168,10 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
+        /**
+         * project Providers
+         */
+         App\Providers\RepositoryServiceProvider::class,
     ],
 
     /*

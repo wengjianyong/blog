@@ -11,5 +11,11 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface SettingRepository extends RepositoryInterface
 {
-    //
+    /**
+     * 网站基础配置
+     *
+     * @param null $tag
+     * @return mixed
+     */
+    public function siteSettings($tag = null);
 }
