@@ -16,29 +16,7 @@
         </a>
     </li>
 
-    <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-            <li>
-                <a class="collapsible-header waves-effect waves-teal">
-                    <i class="material-icons">security</i>RBAC
-                </a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li>
-                            {{--<a href="{{ route('backend.permissions.index') }}" class="waves-effect">--}}
-                                {{--<i class="material-icons"></i>@lang('menus.permissions')--}}
-                            {{--</a>--}}
-                        </li>
-                        <li>
-                            {{--<a href="{{ route('backend.roles.index') }}" class="waves-effect">--}}
-                                {{--<i class="material-icons"></i>@lang('menus.roles')--}}
-                            {{--</a>--}}
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </li>
+
 
     <li>{{--{{ route('backend.users.index') }}--}}
         <a href="" class="waves-effect waves-teal">
