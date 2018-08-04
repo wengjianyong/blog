@@ -22,4 +22,7 @@ Auth::routes();
 Route::group(['namespace' => 'Backend','middleware'=>'auth','prefix' => 'backend','as' => 'backend.'],function(){
     //后台主页
     Route::get('/', 'HomeController@index')->name('home');
+
+    //
+    Route::resource('settings', 'SettingController');
 });

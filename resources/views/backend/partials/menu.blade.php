@@ -44,8 +44,8 @@
             <i class="material-icons">note</i>页面
         </a>
     </li>
-    <li>{{--{{ route('backend.settings.index') }}--}}
-        <a href="" class="waves-effect waves-teal">
+    <li>
+        <a href="{{ route('backend.settings.index') }}" class="waves-effect waves-teal">
             <i class="material-icons">settings</i>设置
         </a>
     </li>

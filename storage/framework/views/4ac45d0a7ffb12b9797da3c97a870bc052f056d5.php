@@ -16,29 +16,7 @@
         </a>
     </li>
 
-    <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-            <li>
-                <a class="collapsible-header waves-effect waves-teal">
-                    <i class="material-icons">security</i>RBAC
-                </a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li>
-                            
-                                
-                            
-                        </li>
-                        <li>
-                            
-                                
-                            
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </li>
+
 
     <li>
         <a href="" class="waves-effect waves-teal">
@@ -67,7 +45,7 @@
         </a>
     </li>
     <li>
-        <a href="" class="waves-effect waves-teal">
+        <a href="<?php echo e(route('backend.settings.index')); ?>" class="waves-effect waves-teal">
             <i class="material-icons">settings</i>设置
         </a>
     </li>

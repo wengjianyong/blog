@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
@@ -33,8 +33,17 @@
             @include('backend.partials.menu')
         </header>
 
-        <main class="py-4">
-            @yield('content')
+        {{-- Main --}}
+        <main class="grey lighten-4">
+            <div class="container">
+                <div class="section">
+                    <div class="card-panel">
+
+                        @yield('content')
+
+                    </div>
+                </div>
+            </div>
         </main>
 
         {{-- Footer --}}

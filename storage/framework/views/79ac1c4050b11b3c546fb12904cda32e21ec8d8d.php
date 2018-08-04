@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.name', 'Laravel')); ?><?php echo $__env->yieldSection(); ?></title>
+    <title><?php echo e(setting('name',config('app.name','Laravel'))); ?><?php echo $__env->yieldSection(); ?></title>
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
@@ -21,8 +21,9 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <!-- <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet"> -->
     <link href="<?php echo e(asset('css/backend.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/admin.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -32,8 +33,17 @@
             <?php echo $__env->make('backend.partials.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         </header>
 
-        <main class="py-4">
-            <?php echo $__env->yieldContent('content'); ?>
+        
+        <main class="grey lighten-4">
+            <div class="container">
+                <div class="section">
+                    <div class="card-panel">
+
+                        <?php echo $__env->yieldContent('content'); ?>
+
+                    </div>
+                </div>
+            </div>
         </main>
 
         
