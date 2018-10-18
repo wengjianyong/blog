@@ -34,8 +34,10 @@ class SettingRepositoryEloquent extends BaseRepository implements SettingReposit
     }
 
     /**
-     * @param null $tag
-     * @return array|mixed
+     * 网站设置
+     *
+     * @param  null $tag 标签
+     * @return array|mixed 返回值
      */
     public function siteSettings($tag = null)
     {

@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::group(['namespace' => 'Api','middleware'=>'api'], function () {
+    //后台主页
+        Route::get('/index', 'IndexController@index')->name('api.index');
+    }
+);

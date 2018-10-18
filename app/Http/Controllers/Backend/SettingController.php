@@ -30,7 +30,7 @@ class SettingController extends Controller
     {
         //
         $settings = $this->settingRepository->paginate();
-        return view('backend.settings.index',compact('settings'));
+        return view('backend.settings.index', compact('settings'));
     }
 
     /**
@@ -74,7 +74,7 @@ class SettingController extends Controller
     public function edit($id)
     {
         $setting = $this->settingRepository->find($id);
-        return view('backend.settings.edit',compact('setting'));
+        return view('backend.settings.edit', compact('setting'));
     }
 
     /**
